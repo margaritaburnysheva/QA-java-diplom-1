@@ -16,17 +16,19 @@ public class IngredientTypeTest {
         this.ingredientType = ingredientType;
         this.expectedIngredientType = expectedIngredientType;
     }
-    @Parameterized.Parameters(name="Тестовые данные: {0}, {1}")
+
+    @Parameterized.Parameters(name = "Тестовые данные: {0}, {1}")
     public static Object[][] getIngredientTypeData() {
         return new Object[][]{
-                {"SAUCE",IngredientType.SAUCE},
-                {"FILLING",IngredientType.FILLING},
+                {"SAUCE", IngredientType.SAUCE},
+                {"FILLING", IngredientType.FILLING},
         };
     }
+
     @Test
-    public void ingredientTypeIncludesExpectedTypes(){
-        IngredientType actualIngredientType=IngredientType.valueOf(ingredientType);
-        assertEquals("Тип ингредиента не соответствует ожидаемому",actualIngredientType,expectedIngredientType);
+    public void ingredientTypeIncludesExpectedTypes() {
+        IngredientType actualIngredientType = IngredientType.valueOf(ingredientType);
+        assertEquals("Тип ингредиента не соответствует ожидаемому", expectedIngredientType, actualIngredientType);
     }
 }
 

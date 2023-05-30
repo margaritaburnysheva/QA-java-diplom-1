@@ -19,8 +19,9 @@ public class IngredientTest {
         this.name = name;
         this.price = price;
     }
-    @Parameterized.Parameters(name="Тестовые данные: {0}, {1}, {2}")
-    public static Object[][] getIngredientData(){
+
+    @Parameterized.Parameters(name = "Тестовые данные: {0}, {1}, {2}")
+    public static Object[][] getIngredientData() {
         return new Object[][]{
                 {IngredientType.SAUCE, "hot sauce", 100},
                 {IngredientType.SAUCE, "sour cream", 200},
@@ -30,22 +31,25 @@ public class IngredientTest {
                 {IngredientType.FILLING, "sausage", 300},
         };
     }
+
     @Test
-    public void getPriceReturnExpectedPrice(){
-        Ingredient ingredient=new Ingredient(type,name,price);
-        float actualPrice= ingredient.getPrice();
-        assertEquals("Цена ингредиента не соответствует ожидаемой",price,actualPrice,0);
+    public void getPriceReturnExpectedPrice() {
+        Ingredient ingredient = new Ingredient(type, name, price);
+        float actualPrice = ingredient.getPrice();
+        assertEquals("Цена ингредиента не соответствует ожидаемой", price, actualPrice, 0);
     }
+
     @Test
-    public void getNameReturnExpectedName(){
-        Ingredient ingredient=new Ingredient(type,name,price);
-        String actualName= ingredient.getName();
-        assertEquals("Название ингредиента не соответствует ожидаемому",name,actualName);
+    public void getNameReturnExpectedName() {
+        Ingredient ingredient = new Ingredient(type, name, price);
+        String actualName = ingredient.getName();
+        assertEquals("Название ингредиента не соответствует ожидаемому", name, actualName);
     }
+
     @Test
-    public void getTypeReturnExpectedType(){
-        Ingredient ingredient=new Ingredient(type,name,price);
-        IngredientType actualType= ingredient.getType();
-        assertEquals("Тип ингредиента не соответствует ожидаемому",type,actualType);
+    public void getTypeReturnExpectedType() {
+        Ingredient ingredient = new Ingredient(type, name, price);
+        IngredientType actualType = ingredient.getType();
+        assertEquals("Тип ингредиента не соответствует ожидаемому", type, actualType);
     }
 }
